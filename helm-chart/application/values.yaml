@@ -1,6 +1,6 @@
 application:
   name: ecommerce
-  replicas: 35
+  replicas: 20
   image:
     name: public.ecr.aws/s2i0b4e6/web-application-ecommerce
     tag: 23b56e5d8950863f3990bfeabd8c23cc0dcc1d9a
