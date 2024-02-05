@@ -1,0 +1,22 @@
+application:
+  name: ecommerce
+  replicas: 35
+  image:
+    name: public.ecr.aws/s2i0b4e6/web-application-ecommerce
+    tag: 13cbe559a9d87f58b88d596173e18e346b666f22
+  container:
+    name: web-ecommerce
+    containerPort: 80
+  service:
+    type: NodePort
+  ingress:
+    className: nginx
+    enabled: true
+    hosts: 
+    - home.129.213.208.11.nip.io
+    - web.129.213.208.11.nip.io
+clusterissuer:
+  name: letsencrypt
+spec:
+  server: https://acme-staging-v02.api.letsencrypt.org/directory
+  email: paulo.odbcontato2@gmail.com    

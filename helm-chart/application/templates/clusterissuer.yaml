@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: {{ .Release.Name }}-letsencrypt-staging
+spec:
+  acme:
+    server: {{ .Values.spec.server }}
+    email: {{ .Values.spec.email }}
+    privateKeySecretRef:
+      name: {{ .Release.Name }}-letsencrypt-staging
+    solvers:
+      - http01:
+          ingress:
+            class: {{ .Values.application.ingress.className }}
