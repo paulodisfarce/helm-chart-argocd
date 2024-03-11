@@ -3,7 +3,7 @@ application:
   replicas: 20
   image:
     name: public.ecr.aws/s2i0b4e6/web-application-ecommerce
-    tag: 100abbf5d67b332b60a53f29974523550d18c5de
+    tag: a62febbc1a3bc898ebb8d05816f86e2d8e01cd66
   container:
     name: web-ecommerce
     containerPort: 80
